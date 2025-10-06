@@ -1,11 +1,11 @@
-module mac_v1 #(parameter N=8)(
+module my_mult #(parameter N=8)(
 	input [N-1:0]a,
 	input [N-1:0]b,
 	output [2*N-1:0]y
 	);
 
-wire [N-1]rt[N-2:0];
-assign {rt[0],y[0]} = { N-1 + 1{b[0]} & a;
+wire [N-1:0]rt[N-2:0];
+assign {rt[0],y[0]} = { N-1 + 1{b[0]}} & a;
 
 genvar i;
 generate
